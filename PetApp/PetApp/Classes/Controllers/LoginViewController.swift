@@ -8,6 +8,8 @@
 
 import UIKit
 
+let kHomeController_ID = "HomeViewController"
+
 class LoginViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
@@ -32,13 +34,29 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         
     }
     
+    func goToHomeScreen(){
+        
+        let controller = self.storyboard!.instantiateViewControllerWithIdentifier(kHomeController_ID)
+        self.navigationController?.pushViewController(controller, animated: true)
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
     @IBAction func loginButtonPressed(){
     
         UserServices.sharedInstance.loginUserWithCredentials("", password: "") { (data, error) -> Void in
             let str = NSString(data: data! as! NSData, encoding: 0)
             print("data = \(str!)")
+            self.goToHomeScreen()
         }
     }
+    
     
     
 

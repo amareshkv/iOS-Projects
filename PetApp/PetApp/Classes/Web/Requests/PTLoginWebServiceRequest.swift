@@ -23,14 +23,19 @@ class PTLoginWebServiceRequest : PTWebServiceRequest{
     
     override func requestComplete(data : NSData) {
         
-        self._block!(data,nil)
+        NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+            self._block!(data,nil)
+        };
+        
         super.requestComplete(data)
     }
     
     
     override func requestFailed(error : NSError){
         
-        self._block!(nil,error)
+        NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+            self._block!(nil,error)
+        };
         super.requestFailed(error)
     }
     

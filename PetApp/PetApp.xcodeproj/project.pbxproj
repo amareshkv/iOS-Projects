@@ -19,6 +19,7 @@
 		ACE83E701C55E45300CF0AA4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE83E6F1C55E45300CF0AA4 /* SplashViewController.swift */; };
 		ACE83E721C55E47100CF0AA4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE83E711C55E47100CF0AA4 /* LoginViewController.swift */; };
 		ACE83E741C55E4B000CF0AA4 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACE83E731C55E4B000CF0AA4 /* RootViewController.swift */; };
+		ACED645A1C60F9CD00F97028 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACED64591C60F9CD00F97028 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		ACE83E6F1C55E45300CF0AA4 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		ACE83E711C55E47100CF0AA4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ACE83E731C55E4B000CF0AA4 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		ACED64591C60F9CD00F97028 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 			children = (
 				ACE83E6F1C55E45300CF0AA4 /* SplashViewController.swift */,
 				ACE83E711C55E47100CF0AA4 /* LoginViewController.swift */,
+				ACED64591C60F9CD00F97028 /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				ACE83E6C1C55E30D00CF0AA4 /* AppDelegate.swift in Sources */,
 				AC697EEE1C59CEFA003D1A4C /* PTWebServiceRequest.swift in Sources */,
 				ACE83E741C55E4B000CF0AA4 /* RootViewController.swift in Sources */,
+				ACED645A1C60F9CD00F97028 /* HomeViewController.swift in Sources */,
 				AC697EF01C59D283003D1A4C /* PTWebService.swift in Sources */,
 				AC697EEC1C59CD68003D1A4C /* PetServices.swift in Sources */,
 				AC8209A11C607BA000255BAC /* PTLoginWebServiceRequest.swift in Sources */,
