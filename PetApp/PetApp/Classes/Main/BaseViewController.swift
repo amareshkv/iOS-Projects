@@ -1,21 +1,22 @@
 //
-//  HomeViewController.swift
+//  BaseViewController.swift
 //  PetApp
 //
-//  Created by Amaresh Kundeppady Venkappa on 2/2/16.
+//  Created by Amaresh Kundeppady Venkappa on 2/3/16.
 //  Copyright © 2016 Amaresh Kundeppady Venkappa. All rights reserved.
 //
 
 import UIKit
-import MapKit
 
-class HomeViewController: BaseViewController {
-    
-    @IBOutlet var mMapView : MKMapView?
+class BaseViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide", name: UIKeyboardWillHideNotification, object: nil)
+
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow", name: UIKeyboardWillShowNotification, object: nil)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -24,6 +25,19 @@ class HomeViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func keyboardWillHide(){
+        
+    }
+    
+    func keyboardWillShow(){
+        
+    }
+    
+    deinit{
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
 
     /*
     // MARK: - Navigation

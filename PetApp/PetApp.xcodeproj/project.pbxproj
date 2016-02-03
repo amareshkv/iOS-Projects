@@ -12,6 +12,7 @@
 		AC697EEE1C59CEFA003D1A4C /* PTWebServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC697EED1C59CEFA003D1A4C /* PTWebServiceRequest.swift */; };
 		AC697EF01C59D283003D1A4C /* PTWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC697EEF1C59D283003D1A4C /* PTWebService.swift */; };
 		AC8209A11C607BA000255BAC /* PTLoginWebServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8209A01C607BA000255BAC /* PTLoginWebServiceRequest.swift */; };
+		ACD269471C61E2A20038248B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD269461C61E2A20038248B /* BaseViewController.swift */; };
 		ACE83E661C55E2B100CF0AA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE83E621C55E2B100CF0AA4 /* LaunchScreen.storyboard */; };
 		ACE83E671C55E2B100CF0AA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE83E641C55E2B100CF0AA4 /* Main.storyboard */; };
 		ACE83E691C55E2BB00CF0AA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACE83E681C55E2BB00CF0AA4 /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		AC697EED1C59CEFA003D1A4C /* PTWebServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWebServiceRequest.swift; sourceTree = "<group>"; };
 		AC697EEF1C59D283003D1A4C /* PTWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWebService.swift; sourceTree = "<group>"; };
 		AC8209A01C607BA000255BAC /* PTLoginWebServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTLoginWebServiceRequest.swift; sourceTree = "<group>"; };
+		ACD269461C61E2A20038248B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ACE83E441C55E1F200CF0AA4 /* PetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE83E531C55E1F200CF0AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ACE83E631C55E2B100CF0AA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				ACE83E6B1C55E30D00CF0AA4 /* AppDelegate.swift */,
 				ACE83E731C55E4B000CF0AA4 /* RootViewController.swift */,
+				ACD269461C61E2A20038248B /* BaseViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				ACE83E721C55E47100CF0AA4 /* LoginViewController.swift in Sources */,
 				AC00276C1C607E53006D2045 /* UserServices.swift in Sources */,
+				ACD269471C61E2A20038248B /* BaseViewController.swift in Sources */,
 				ACE83E6C1C55E30D00CF0AA4 /* AppDelegate.swift in Sources */,
 				AC697EEE1C59CEFA003D1A4C /* PTWebServiceRequest.swift in Sources */,
 				ACE83E741C55E4B000CF0AA4 /* RootViewController.swift in Sources */,

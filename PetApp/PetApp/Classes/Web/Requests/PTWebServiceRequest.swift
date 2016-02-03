@@ -14,7 +14,7 @@ class PTWebServiceRequest: NSObject,NSURLSessionDelegate {
     var _headers : NSMutableDictionary?
     var _body : NSMutableDictionary?
     var _url : NSURL?
-    weak var _manager : PTWebService?
+//    weak var _manager : PTWebService?
     var _receivedData : NSMutableData?
     var _session : NSURLSession?
     var _block : webServiceCompletionBlock?

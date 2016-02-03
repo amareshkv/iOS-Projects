@@ -10,7 +10,10 @@ import UIKit
 
 let kHomeController_ID = "HomeViewController"
 
-class LoginViewController: UIViewController,UITextFieldDelegate {
+class LoginViewController: BaseViewController,UITextFieldDelegate {
+    
+    @IBOutlet var mEmailTextField : UITextField?
+    @IBOutlet var mPasswordTextField : UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,11 +45,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     }
     
     
-    
-    
-    
-    
-    
+    // MARK: Button actions
     
     @IBAction func loginButtonPressed(){
     
@@ -58,6 +57,32 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     }
     
     
+    // MARK: Override super class methods
     
+    override func keyboardWillHide(){
+        [UIView .animateWithDuration(0.4, animations: { () -> Void in
+            self.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+            }, completion: { (value) -> Void in
+                
+        })]
+        
+        mEmailTextField?.resignFirstResponder()
+        mPasswordTextField?.resignFirstResponder()
+    }
+    
+    override func keyboardWillShow(){
+        
+        [UIView .animateWithDuration(0.4, animations: { () -> Void in
+            self.view.frame = CGRectMake(self.view.frame.origin.x, -50, self.view.frame.size.width, self.view.frame.size.height);
+            }, completion: { (value) -> Void in
+                
+        })]
+        
+        
+        
+    }
+    
+    
+
 
 }
