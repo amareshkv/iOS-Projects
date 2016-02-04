@@ -22,12 +22,11 @@ class PetServices: NSObject {
     }
     
     
-    func getPetsInfo() -> NSArray{
+    func getPetsInfo(username : NSString, block: webServiceCompletionBlock){
         
-        
-        
-        
-        return NSArray();
+        let request = PTGetPetsWebServiceRequest(block: block)
+        request.start()
+
     }
     
     

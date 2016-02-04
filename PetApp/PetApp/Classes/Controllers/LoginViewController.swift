@@ -30,12 +30,6 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
         print(" controller deinit called")
     }
 
-    func textFieldShouldReturn(textField: UITextField) -> Bool{
-        
-        textField.resignFirstResponder()
-        return true;
-        
-    }
     
     func goToHomeScreen(){
         
@@ -50,7 +44,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
     @IBAction func loginButtonPressed(){
     
         UserServices.sharedInstance.loginUserWithCredentials("", password: "") { (data, error) -> Void in
-            let str = NSString(data: data! as! NSData, encoding: 0)
+            let str = NSString(data: data! as! NSData, encoding: NSUTF8StringEncoding)
             print("data = \(str!)")
             self.goToHomeScreen()
         }
@@ -68,6 +62,8 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
         
         mEmailTextField?.resignFirstResponder()
         mPasswordTextField?.resignFirstResponder()
+        
+        super.keyboardWillHide()
     }
     
     override func keyboardWillShow(){
@@ -78,7 +74,7 @@ class LoginViewController: BaseViewController,UITextFieldDelegate {
                 
         })]
         
-        
+        super.keyboardWillShow()
         
     }
     

@@ -21,8 +21,10 @@ class PTWebServiceRequest: NSObject,NSURLSessionDelegate {
     
     
     init(block : webServiceCompletionBlock) {
-        self._block = block
+        
         super.init()
+        
+        self._block = block
         self._headers = NSMutableDictionary(capacity: 0)
         self._body = NSMutableDictionary(capacity: 0)
         

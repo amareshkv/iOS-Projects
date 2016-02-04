@@ -1,22 +1,20 @@
 //
-//  BaseViewController.swift
+//  PetsViewController.swift
 //  PetApp
 //
-//  Created by Amaresh Kundeppady Venkappa on 2/3/16.
+//  Created by Amaresh Kundeppady Venkappa on 2/4/16.
 //  Copyright © 2016 Amaresh Kundeppady Venkappa. All rights reserved.
 //
 
 import UIKit
 
-class BaseViewController: UIViewController {
+class PetsViewController: UIViewController {
+    
+    var mPetsArray:NSArray?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide", name: UIKeyboardWillHideNotification, object: nil)
-
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow", name: UIKeyboardWillShowNotification, object: nil)
-        
         // Do any additional setup after loading the view.
     }
 
@@ -25,26 +23,8 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool{
-        
-        textField.resignFirstResponder()
-        return true;
-        
-    }
     
     
-    func keyboardWillHide(){
-        
-    }
-    
-    func keyboardWillShow(){
-        
-    }
-    
-    deinit{
-        
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
 
     /*
     // MARK: - Navigation

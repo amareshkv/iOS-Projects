@@ -12,6 +12,8 @@
 		AC697EEE1C59CEFA003D1A4C /* PTWebServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC697EED1C59CEFA003D1A4C /* PTWebServiceRequest.swift */; };
 		AC697EF01C59D283003D1A4C /* PTWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC697EEF1C59D283003D1A4C /* PTWebService.swift */; };
 		AC8209A11C607BA000255BAC /* PTLoginWebServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8209A01C607BA000255BAC /* PTLoginWebServiceRequest.swift */; };
+		ACD1F6FC1C631FA800F01205 /* PTGetPetsWebServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD1F6FB1C631FA800F01205 /* PTGetPetsWebServiceRequest.swift */; };
+		ACD1F6FE1C6320C500F01205 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD1F6FD1C6320C500F01205 /* PetsViewController.swift */; };
 		ACD269471C61E2A20038248B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD269461C61E2A20038248B /* BaseViewController.swift */; };
 		ACE83E661C55E2B100CF0AA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE83E621C55E2B100CF0AA4 /* LaunchScreen.storyboard */; };
 		ACE83E671C55E2B100CF0AA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE83E641C55E2B100CF0AA4 /* Main.storyboard */; };
@@ -29,6 +31,8 @@
 		AC697EED1C59CEFA003D1A4C /* PTWebServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWebServiceRequest.swift; sourceTree = "<group>"; };
 		AC697EEF1C59D283003D1A4C /* PTWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWebService.swift; sourceTree = "<group>"; };
 		AC8209A01C607BA000255BAC /* PTLoginWebServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTLoginWebServiceRequest.swift; sourceTree = "<group>"; };
+		ACD1F6FB1C631FA800F01205 /* PTGetPetsWebServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTGetPetsWebServiceRequest.swift; sourceTree = "<group>"; };
+		ACD1F6FD1C6320C500F01205 /* PetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
 		ACD269461C61E2A20038248B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		ACE83E441C55E1F200CF0AA4 /* PetApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACE83E531C55E1F200CF0AA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,6 +102,7 @@
 				ACE83E6F1C55E45300CF0AA4 /* SplashViewController.swift */,
 				ACE83E711C55E47100CF0AA4 /* LoginViewController.swift */,
 				ACED64591C60F9CD00F97028 /* HomeViewController.swift */,
+				ACD1F6FD1C6320C500F01205 /* PetsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			children = (
 				AC697EED1C59CEFA003D1A4C /* PTWebServiceRequest.swift */,
 				AC8209A01C607BA000255BAC /* PTLoginWebServiceRequest.swift */,
+				ACD1F6FB1C631FA800F01205 /* PTGetPetsWebServiceRequest.swift */,
 				AC697EEF1C59D283003D1A4C /* PTWebService.swift */,
 			);
 			path = Requests;
@@ -269,6 +275,8 @@
 				AC697EF01C59D283003D1A4C /* PTWebService.swift in Sources */,
 				AC697EEC1C59CD68003D1A4C /* PetServices.swift in Sources */,
 				AC8209A11C607BA000255BAC /* PTLoginWebServiceRequest.swift in Sources */,
+				ACD1F6FC1C631FA800F01205 /* PTGetPetsWebServiceRequest.swift in Sources */,
+				ACD1F6FE1C6320C500F01205 /* PetsViewController.swift in Sources */,
 				ACE83E701C55E45300CF0AA4 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
