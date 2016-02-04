@@ -12,8 +12,8 @@ let kHomeController_ID = "HomeViewController"
 
 class LoginViewController: BaseViewController,UITextFieldDelegate {
     
-    @IBOutlet var mEmailTextField : UITextField?
-    @IBOutlet var mPasswordTextField : UITextField?
+    @IBOutlet weak var mEmailTextField : UITextField?
+    @IBOutlet weak var mPasswordTextField : UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()

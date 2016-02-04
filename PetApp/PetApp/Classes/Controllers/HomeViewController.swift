@@ -13,7 +13,7 @@ let kPetsControllerID = "PetsViewController"
 
 class HomeViewController: BaseViewController,CLLocationManagerDelegate {
     
-    @IBOutlet var mMapView : MKMapView?
+    @IBOutlet weak var mMapView : MKMapView?
     var locationManager : CLLocationManager?
 
     override func viewDidLoad() {
@@ -50,11 +50,11 @@ class HomeViewController: BaseViewController,CLLocationManagerDelegate {
     @IBAction func viewPetProfilesButtonPressed(){
         
         PetServices.sharedInstance.getPetsInfo("") { (data, error) -> Void in
-            let array : NSArray = data as! NSArray
+            /*let array : NSArray = data as! NSArray
             print("array = \(array)")
             if array.count>0{
                 self.goToPetsScreen(array)
-            }
+            }*/
         }
         
     }
