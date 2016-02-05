@@ -10,8 +10,9 @@ import UIKit
 import MapKit
 
 let kPetsControllerID = "PetsViewController"
+let tmpEmailAddress = "amareshkv9@gmail.com"
 
-class HomeViewController: BaseViewController,CLLocationManagerDelegate {
+class HomeViewController: UserBaseViewController,CLLocationManagerDelegate {
     
     @IBOutlet weak var mMapView : MKMapView?
     var locationManager : CLLocationManager?
@@ -27,10 +28,11 @@ class HomeViewController: BaseViewController,CLLocationManagerDelegate {
         }
         self.locationManager?.startUpdatingLocation()
        
-
+        self.addTopBar("PetApp", email: tmpEmailAddress)
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -55,6 +57,7 @@ class HomeViewController: BaseViewController,CLLocationManagerDelegate {
             if array.count>0{
                 self.goToPetsScreen(array)
             }*/
+            self.goToPetsScreen(NSArray())
         }
         
     }

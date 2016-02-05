@@ -12,6 +12,12 @@
 		AC697EEE1C59CEFA003D1A4C /* PTWebServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC697EED1C59CEFA003D1A4C /* PTWebServiceRequest.swift */; };
 		AC697EF01C59D283003D1A4C /* PTWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC697EEF1C59D283003D1A4C /* PTWebService.swift */; };
 		AC8209A11C607BA000255BAC /* PTLoginWebServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8209A01C607BA000255BAC /* PTLoginWebServiceRequest.swift */; };
+		AC8ADD3E1C645A92008B7A24 /* PetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8ADD3D1C645A92008B7A24 /* PetProfileViewController.swift */; };
+		AC8ADD401C645EB7008B7A24 /* UserBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8ADD3F1C645EB7008B7A24 /* UserBaseViewController.swift */; };
+		AC8ADD4A1C646879008B7A24 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8ADD491C646879008B7A24 /* UIColor+Additions.swift */; };
+		AC8ADD4C1C647273008B7A24 /* UserTopBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8ADD4B1C647273008B7A24 /* UserTopBarView.swift */; };
+		AC8ADD4E1C64728C008B7A24 /* UserTopBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC8ADD4D1C64728C008B7A24 /* UserTopBarView.xib */; };
+		AC8ADD501C647683008B7A24 /* UIKit+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8ADD4F1C647683008B7A24 /* UIKit+Additions.swift */; };
 		ACD1F6FC1C631FA800F01205 /* PTGetPetsWebServiceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD1F6FB1C631FA800F01205 /* PTGetPetsWebServiceRequest.swift */; };
 		ACD1F6FE1C6320C500F01205 /* PetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD1F6FD1C6320C500F01205 /* PetsViewController.swift */; };
 		ACD269471C61E2A20038248B /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD269461C61E2A20038248B /* BaseViewController.swift */; };
@@ -31,6 +37,12 @@
 		AC697EED1C59CEFA003D1A4C /* PTWebServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWebServiceRequest.swift; sourceTree = "<group>"; };
 		AC697EEF1C59D283003D1A4C /* PTWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWebService.swift; sourceTree = "<group>"; };
 		AC8209A01C607BA000255BAC /* PTLoginWebServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTLoginWebServiceRequest.swift; sourceTree = "<group>"; };
+		AC8ADD3D1C645A92008B7A24 /* PetProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetProfileViewController.swift; sourceTree = "<group>"; };
+		AC8ADD3F1C645EB7008B7A24 /* UserBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserBaseViewController.swift; sourceTree = "<group>"; };
+		AC8ADD491C646879008B7A24 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
+		AC8ADD4B1C647273008B7A24 /* UserTopBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTopBarView.swift; sourceTree = "<group>"; };
+		AC8ADD4D1C64728C008B7A24 /* UserTopBarView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTopBarView.xib; sourceTree = "<group>"; };
+		AC8ADD4F1C647683008B7A24 /* UIKit+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Additions.swift"; sourceTree = "<group>"; };
 		ACD1F6FB1C631FA800F01205 /* PTGetPetsWebServiceRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTGetPetsWebServiceRequest.swift; sourceTree = "<group>"; };
 		ACD1F6FD1C6320C500F01205 /* PetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PetsViewController.swift; sourceTree = "<group>"; };
 		ACD269461C61E2A20038248B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -91,7 +103,6 @@
 				ACE83E5B1C55E28C00CF0AA4 /* Views */,
 				ACE83E5C1C55E28C00CF0AA4 /* Web */,
 				ACE83E751C55E4EA00CF0AA4 /* CocoaAdditions */,
-				ACE83E761C55E4EA00CF0AA4 /* Constants */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -103,6 +114,7 @@
 				ACE83E711C55E47100CF0AA4 /* LoginViewController.swift */,
 				ACED64591C60F9CD00F97028 /* HomeViewController.swift */,
 				ACD1F6FD1C6320C500F01205 /* PetsViewController.swift */,
+				AC8ADD3D1C645A92008B7A24 /* PetProfileViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -110,6 +122,8 @@
 		ACE83E5B1C55E28C00CF0AA4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AC8ADD4B1C647273008B7A24 /* UserTopBarView.swift */,
+				AC8ADD4D1C64728C008B7A24 /* UserTopBarView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -175,6 +189,7 @@
 				ACE83E6B1C55E30D00CF0AA4 /* AppDelegate.swift */,
 				ACE83E731C55E4B000CF0AA4 /* RootViewController.swift */,
 				ACD269461C61E2A20038248B /* BaseViewController.swift */,
+				AC8ADD3F1C645EB7008B7A24 /* UserBaseViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -182,15 +197,10 @@
 		ACE83E751C55E4EA00CF0AA4 /* CocoaAdditions */ = {
 			isa = PBXGroup;
 			children = (
+				AC8ADD491C646879008B7A24 /* UIColor+Additions.swift */,
+				AC8ADD4F1C647683008B7A24 /* UIKit+Additions.swift */,
 			);
 			path = CocoaAdditions;
-			sourceTree = "<group>";
-		};
-		ACE83E761C55E4EA00CF0AA4 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -253,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACE83E671C55E2B100CF0AA4 /* Main.storyboard in Resources */,
+				AC8ADD4E1C64728C008B7A24 /* UserTopBarView.xib in Resources */,
 				ACE83E691C55E2BB00CF0AA4 /* Assets.xcassets in Resources */,
 				ACE83E661C55E2B100CF0AA4 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -269,10 +280,15 @@
 				AC00276C1C607E53006D2045 /* UserServices.swift in Sources */,
 				ACD269471C61E2A20038248B /* BaseViewController.swift in Sources */,
 				ACE83E6C1C55E30D00CF0AA4 /* AppDelegate.swift in Sources */,
+				AC8ADD501C647683008B7A24 /* UIKit+Additions.swift in Sources */,
 				AC697EEE1C59CEFA003D1A4C /* PTWebServiceRequest.swift in Sources */,
+				AC8ADD4C1C647273008B7A24 /* UserTopBarView.swift in Sources */,
 				ACE83E741C55E4B000CF0AA4 /* RootViewController.swift in Sources */,
 				ACED645A1C60F9CD00F97028 /* HomeViewController.swift in Sources */,
 				AC697EF01C59D283003D1A4C /* PTWebService.swift in Sources */,
+				AC8ADD3E1C645A92008B7A24 /* PetProfileViewController.swift in Sources */,
+				AC8ADD4A1C646879008B7A24 /* UIColor+Additions.swift in Sources */,
+				AC8ADD401C645EB7008B7A24 /* UserBaseViewController.swift in Sources */,
 				AC697EEC1C59CD68003D1A4C /* PetServices.swift in Sources */,
 				AC8209A11C607BA000255BAC /* PTLoginWebServiceRequest.swift in Sources */,
 				ACD1F6FC1C631FA800F01205 /* PTGetPetsWebServiceRequest.swift in Sources */,

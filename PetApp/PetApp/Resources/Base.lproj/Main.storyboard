@@ -129,6 +129,7 @@
         <!--Home View Controller-->
         <scene sceneID="6nl-tW-m3x">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jgy-YZ-A1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="HomeViewController" id="7rP-V5-sYQ" customClass="HomeViewController" customModule="PetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HoU-nc-W2Q"/>
@@ -138,20 +139,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yna-0P-RqG">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="20"/>
-                                <color key="backgroundColor" red="0.1843137255" green="0.63921568630000003" blue="0.63529411759999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="pHs-S4-brn"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fAK-Y3-esV">
-                                <rect key="frame" x="0.0" y="20" width="320" height="30"/>
-                                <color key="backgroundColor" red="0.18431372549019609" green="0.63921568627450975" blue="0.63529411764705879" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Kon-iQ-gJT"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBK-UV-NbH" userLabel="ContainerView">
                                 <rect key="frame" x="0.0" y="50" width="320" height="518"/>
                                 <subviews>
@@ -183,9 +170,9 @@
                                             <constraint firstAttribute="bottom" secondItem="GqK-7N-8Sd" secondAttribute="bottom" id="pRt-JH-VX5"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jha-zt-cXZ">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jha-zt-cXZ">
                                         <rect key="frame" x="11" y="15" width="298" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="7rP-V5-sYQ" id="KKo-nE-i7Y"/>
@@ -269,15 +256,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VBK-UV-NbH" firstAttribute="top" secondItem="fAK-Y3-esV" secondAttribute="bottom" id="8b1-eg-vzH"/>
-                            <constraint firstItem="fAK-Y3-esV" firstAttribute="leading" secondItem="dep-XY-2ml" secondAttribute="leading" id="H3q-Eb-fcF"/>
                             <constraint firstItem="86a-zI-UMG" firstAttribute="top" secondItem="VBK-UV-NbH" secondAttribute="bottom" id="If8-X0-naJ"/>
-                            <constraint firstItem="fAK-Y3-esV" firstAttribute="top" secondItem="yna-0P-RqG" secondAttribute="bottom" id="Rjg-fw-G9y"/>
                             <constraint firstItem="VBK-UV-NbH" firstAttribute="leading" secondItem="dep-XY-2ml" secondAttribute="leading" id="TWA-8d-MXD"/>
-                            <constraint firstAttribute="trailing" secondItem="yna-0P-RqG" secondAttribute="trailing" id="U5f-AS-hmt"/>
-                            <constraint firstItem="yna-0P-RqG" firstAttribute="leading" secondItem="dep-XY-2ml" secondAttribute="leading" id="jQm-5t-deB"/>
-                            <constraint firstItem="yna-0P-RqG" firstAttribute="top" secondItem="dep-XY-2ml" secondAttribute="top" id="qGt-nF-g5Y"/>
-                            <constraint firstAttribute="trailing" secondItem="fAK-Y3-esV" secondAttribute="trailing" id="xUh-hm-EOO"/>
+                            <constraint firstItem="VBK-UV-NbH" firstAttribute="top" secondItem="HoU-nc-W2Q" secondAttribute="bottom" constant="30" id="br4-8G-TCT"/>
                             <constraint firstAttribute="trailing" secondItem="VBK-UV-NbH" secondAttribute="trailing" id="zoJ-pW-KYc"/>
                         </constraints>
                     </view>
@@ -285,14 +266,13 @@
                         <outlet property="mMapView" destination="f02-ZX-hDZ" id="hve-fX-fFA"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jgy-YZ-A1h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="903" y="424"/>
         </scene>
         <!--Pets View Controller-->
         <scene sceneID="CrI-AQ-xNz">
             <objects>
-                <viewController id="zYX-JQ-P2f" customClass="PetsViewController" customModule="PetApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PetsViewController" id="zYX-JQ-P2f" customClass="PetsViewController" customModule="PetApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wab-me-vS6"/>
                         <viewControllerLayoutGuide type="bottom" id="2sX-aB-8b2"/>
@@ -306,6 +286,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCO-SS-VLT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1267" y="424"/>
+        </scene>
+        <!--Pet Profile View Controller-->
+        <scene sceneID="dBu-38-BDJ">
+            <objects>
+                <viewController storyboardIdentifier="PetProfileViewController" id="yAe-T7-dM0" customClass="PetProfileViewController" customModule="PetApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cMy-zP-9BP"/>
+                        <viewControllerLayoutGuide type="bottom" id="IxW-yG-Bah"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="b9Q-Fa-xby">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rBr-00-G10" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1684" y="424"/>
         </scene>
     </scenes>
 </document>

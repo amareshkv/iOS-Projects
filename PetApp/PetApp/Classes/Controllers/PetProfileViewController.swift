@@ -1,21 +1,17 @@
 //
-//  PetsViewController.swift
+//  PetProfileViewController.swift
 //  PetApp
 //
-//  Created by Amaresh Kundeppady Venkappa on 2/4/16.
+//  Created by Amaresh Kundeppady Venkappa on 2/5/16.
 //  Copyright © 2016 Amaresh Kundeppady Venkappa. All rights reserved.
 //
 
 import UIKit
 
-class PetsViewController: UserBaseViewController {
-    
-    var mPetsArray:NSArray?
+class PetProfileViewController: UserBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.addTopBar("Pet Profiles", email: tmpEmailAddress)
 
         // Do any additional setup after loading the view.
     }
@@ -24,8 +20,6 @@ class PetsViewController: UserBaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
 
     /*

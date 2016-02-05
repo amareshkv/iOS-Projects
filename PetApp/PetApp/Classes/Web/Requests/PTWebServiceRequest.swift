@@ -37,7 +37,7 @@ class PTWebServiceRequest: NSObject,NSURLSessionDelegate {
     
 
     deinit{
-        print("deinit called")
+        print("webservice deinit called")
         self._headers = nil
         self._body = nil
         self._url = nil
