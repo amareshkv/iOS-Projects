@@ -44,6 +44,8 @@ class LocationServices: NSObject,CLLocationManagerDelegate {
     internal func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         self.userLocation = locations.first
         
+        NSNotificationCenter.defaultCenter().postNotificationName(kUserLocationNotification, object: self.userLocation)
+        
     }
     
     internal func locationManager(manager: CLLocationManager, didFailWithError error: NSError){

@@ -27,7 +27,7 @@ class LocationWebServiceRequest: NSObject {
         self._headers = NSMutableDictionary(capacity: 0)
         self._body = NSMutableDictionary(capacity: 0)
         
-        self._url = NSURL(string: "https://api.github.com/users/mralexgray/repos")
+        //self._url = NSURL(string: "https://api.github.com/users/mralexgray/repos")
         self._receivedData = NSMutableData(capacity: 0)
         
         self._session = NSURLSession.sharedSession()

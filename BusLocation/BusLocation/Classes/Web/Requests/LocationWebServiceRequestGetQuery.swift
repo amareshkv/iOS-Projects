@@ -16,10 +16,12 @@ class LocationWebServiceRequestGetQuery : LocationWebServiceRequest{
         
         super.init(block: block)
         
-        let urlString = "https://maps.googleapis.com/maps/api/place/search/json?location=\(latitude),\(longitude)&radius=\(radius)&types=\(query!)&sensor=true&key=\(apiKey!)"
+        let urlString : String = "https://maps.googleapis.com/maps/api/place/search/json?location=\(latitude),\(longitude)&radius=\(radius)&types=\(query!)&sensor=true&key=\(apiKey!)"
+        let urlStr : String = urlString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+
         
-        
-        self._url = NSURL(string: urlString)
+        self._url = NSURL(string: urlStr)
+        print("\(_url)")
         
     }
     
@@ -28,9 +30,22 @@ class LocationWebServiceRequestGetQuery : LocationWebServiceRequest{
         
         NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
             
-            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments)
+            var array = [QueryObject]()
             
-            self._block!(json,nil)
+            weak var context = LocationStorage.sharedStorage.moc
+            
+            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as? NSDictionary
+            print("\(json!)")
+            let results = json?.arrayForKey("results")
+            
+            for attributes in results!{
+                
+                let entity = QueryObject(attributes: attributes as? NSDictionary, moc: context)
+                array.append(entity)
+                
+            }
+            
+            self._block!(array,nil)
         };
         
         super.requestComplete(data!)
