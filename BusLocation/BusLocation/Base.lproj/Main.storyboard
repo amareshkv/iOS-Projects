@@ -62,8 +62,22 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M3Q-1P-zeb">
                                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Near By" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V9y-OL-Yyw">
+                                                <rect key="frame" x="126" y="10" width="68" height="23.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68" id="Ch6-8h-cyd"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="OBr-xD-ida"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="V9y-OL-Yyw" firstAttribute="centerX" secondItem="M3Q-1P-zeb" secondAttribute="centerX" id="iI9-fG-hr7"/>
+                                            <constraint firstItem="V9y-OL-Yyw" firstAttribute="centerY" secondItem="M3Q-1P-zeb" secondAttribute="centerY" id="jcI-Ze-aUl"/>
                                             <constraint firstAttribute="height" constant="44" id="vt2-87-1qR"/>
                                         </constraints>
                                     </view>
@@ -80,7 +94,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="hN8-0W-rOv" customClass="NearByTableViewCell" customModule="BusLocation" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="hN8-0W-rOv" customClass="NearByTableViewCell" customModule="BusLocation" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hN8-0W-rOv" id="NYc-wn-5Qu">
@@ -155,6 +169,7 @@
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
                         <outlet property="tableView" destination="Yqm-s5-fzD" id="M88-tx-AHD"/>
+                        <outlet property="topBar" destination="hEH-Nr-acv" id="L4e-Pk-sxs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krq-iT-EdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,9 +193,30 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FWa-FF-2ox">
                                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILZ-Qa-na7">
+                                                <rect key="frame" x="135" y="11" width="51" height="23.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="51" id="NZZ-Vf-PlI"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="QN7-k6-6dr"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1R-gn-1wE">
+                                                <rect key="frame" x="8" y="8" width="46" height="30"/>
+                                                <state key="normal" title="Back"/>
+                                                <connections>
+                                                    <action selector="backPressed:" destination="MTo-Ho-2im" eventType="touchUpInside" id="6tc-3L-4JX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="ILZ-Qa-na7" firstAttribute="centerX" secondItem="FWa-FF-2ox" secondAttribute="centerX" id="A5K-d4-RIB"/>
                                             <constraint firstAttribute="height" constant="44" id="zEI-t8-8fI"/>
+                                            <constraint firstItem="ILZ-Qa-na7" firstAttribute="centerY" secondItem="FWa-FF-2ox" secondAttribute="centerY" id="zUg-Jc-2gV"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -220,7 +256,9 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="568"/>
                     <connections>
+                        <outlet property="headingLabel" destination="ILZ-Qa-na7" id="2pb-QP-eLk"/>
                         <outlet property="mapView" destination="cYf-h9-xv6" id="Ie2-dA-Xyo"/>
+                        <outlet property="topBar" destination="LYn-7q-0eL" id="caH-bq-Qou"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9jU-dd-Y4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>

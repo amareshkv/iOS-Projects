@@ -14,6 +14,19 @@ let Google_API_Key = "AIzaSyAr4KKhGxowRn9aLZm3gZXz1szYF5Rnk5I"
 enum GoogleQuery_Type : NSInteger {
     case ATM
     case Bus_Station
+    case Pharmacy
+    case Restaurant
+    case Travel_Agency
+    case Cafe
+    case Bank
+    case Bar
+    case Laundry
+    case Bakery
+    case Spa
+    case Police
+    case Doctor
+    case Subway_station
+    case Park
 }
 
 class LocationServices: NSObject,CLLocationManagerDelegate {
@@ -61,12 +74,66 @@ class LocationServices: NSObject,CLLocationManagerDelegate {
         var query : String?
         
         switch type {
-        case GoogleQuery_Type.ATM:
+        case .ATM:
             query = "atm|ATM"
             break
             
-        case GoogleQuery_Type.Bus_Station:
+        case .Bus_Station:
             query = "bus_station"
+            break
+            
+        case .Pharmacy:
+            query = "pharmacy"
+            break
+            
+        case .Restaurant:
+            query = "restaurant"
+            break
+            
+        case .Travel_Agency:
+            query = "travel_agency"
+            break
+            
+        case .Cafe:
+            query = "cafe"
+            break
+            
+        case .Bank:
+            query = "bank"
+            break
+            
+        case .Bar:
+            query = "bar"
+            break
+            
+        case .Laundry:
+            query = "laundry"
+            
+        case .Bakery:
+            query = "bakery"
+            break
+            
+        case .Spa:
+            query = "spa"
+            break
+            
+        case .Police:
+            query = "police"
+            break
+            
+        case .Doctor:
+            query = "doctor"
+            break
+            
+        case .Subway_station:
+            query = "subway_station"
+            break
+            
+        case .Park:
+            query = "park"
+            break
+            
+        default:
             break
             
         

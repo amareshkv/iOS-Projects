@@ -115,6 +115,15 @@ class MapViewController: BaseViewController,MKMapViewDelegate {
     }
     
     
+    //MARK: Button actions -----
+    
+    @IBAction func backPressed(sender : UIButton?){
+        
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+
+    
+    
     deinit{
         
         NSNotificationCenter.defaultCenter().removeObserver(self)

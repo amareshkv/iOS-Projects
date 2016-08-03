@@ -9,9 +9,16 @@
 import UIKit
 
 class BaseViewController: UIViewController {
+    
+    @IBOutlet weak var headingLabel : UILabel?
+    
+    @IBOutlet weak var topBar : UIView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        headingLabel?.fontForDevice()
+        topBar?.backgroundColor = UIColor.colorForHex("#00B7F7")
 
         // Do any additional setup after loading the view.
     }

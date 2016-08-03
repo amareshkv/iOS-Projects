@@ -40,13 +40,10 @@ class MenuViewController: BaseViewController,UITableViewDelegate,UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nearByPlaces()
         
-        let atm = NearBy(title: "ATMs", key: "atm|ATM",type: GoogleQuery_Type.ATM)
-        let bus_station = NearBy(title: "Bus Stops", key: "bus_station", type : GoogleQuery_Type.Bus_Station)
-
-        nearByArray?.append(atm)
-        nearByArray?.append(bus_station)
-
+        Utility.showCRToastWithMessage("Success", img: nil)
+        
         // Do any additional setup after loading the view.
     }
 
@@ -54,6 +51,31 @@ class MenuViewController: BaseViewController,UITableViewDelegate,UITableViewData
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func nearByPlaces(){
+        
+        let atm = NearBy(title: "ATMs", key: "atm|ATM",type: GoogleQuery_Type.ATM)
+        nearByArray?.append(atm)
+        
+        let bus_station = NearBy(title: "Bus Stops", key: "bus_station", type : GoogleQuery_Type.Bus_Station)
+        nearByArray?.append(bus_station)
+        
+        let pharmacy = NearBy(title: "Pharmacy", key: "pharmacy", type : GoogleQuery_Type.Bus_Station)
+        nearByArray?.append(pharmacy)
+        
+        let restaurant = NearBy(title: "Restaurants", key: "restaurant", type: GoogleQuery_Type.Restaurant)
+        nearByArray?.append(restaurant)
+        
+        
+        
+        
+        
+        
+        
+        tableView?.reloadData()
+
+    }
+    
     
     //MARK: tableview delegates ------
     
@@ -92,7 +114,9 @@ class MenuViewController: BaseViewController,UITableViewDelegate,UITableViewData
         self.navigationController?.pushViewController(controller!, animated: true)
         
     }
-
+    
+    
+    
     /*
     // MARK: - Navigation
 
