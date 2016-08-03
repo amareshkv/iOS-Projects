@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC26E8591D51B61C00989996 /* NearByTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8581D51B61C00989996 /* NearByTableViewCell.swift */; };
 		ACB267A01D4F200D00DC4B6F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACB2679E1D4F200D00DC4B6F /* DataModel.xcdatamodeld */; };
 		ACB267A51D4F216E00DC4B6F /* QueryObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB267A31D4F216E00DC4B6F /* QueryObject+CoreDataProperties.swift */; };
 		ACB267A61D4F216E00DC4B6F /* QueryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB267A41D4F216E00DC4B6F /* QueryObject.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC26E8581D51B61C00989996 /* NearByTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NearByTableViewCell.swift; sourceTree = "<group>"; };
 		ACB2679F1D4F200D00DC4B6F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		ACB267A31D4F216E00DC4B6F /* QueryObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "QueryObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ACB267A41D4F216E00DC4B6F /* QueryObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryObject.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		E998C58A1D4DD7BD001F5C16 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AC26E8581D51B61C00989996 /* NearByTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				E998C59B1D4DFCE0001F5C16 /* LocationServices.swift in Sources */,
 				E998C5971D4DD823001F5C16 /* MenuViewController.swift in Sources */,
 				E998C58D1D4DD7BD001F5C16 /* AppDelegate.swift in Sources */,
+				AC26E8591D51B61C00989996 /* NearByTableViewCell.swift in Sources */,
 				ACB267A61D4F216E00DC4B6F /* QueryObject.swift in Sources */,
 				E998C5A41D4E35A7001F5C16 /* LocationWebServiceRequestGetQuery.swift in Sources */,
 				E998C5931D4DD80E001F5C16 /* BaseViewController.swift in Sources */,

@@ -16,7 +16,9 @@ class MapViewController: BaseViewController,MKMapViewDelegate {
 
     @IBOutlet weak var mapView : MKMapView?
     
-    var objectArray : [QueryObject]?
+    var objectArray : [QueryObject]? = [QueryObject]()
+    
+    var nearByObject : NearBy?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,8 +58,7 @@ class MapViewController: BaseViewController,MKMapViewDelegate {
         }
         
         
-        
-        LocationServices.sharedServices.queryForType(GoogleQuery_Type.ATM) { (data, error) in
+        LocationServices.sharedServices.queryForType((self.nearByObject?.type)!) { (data, error) in
     
             let array = data as? [QueryObject]
             self.objectArray = array
@@ -107,9 +108,9 @@ class MapViewController: BaseViewController,MKMapViewDelegate {
             return nil
         }
         
-        let view = MKAnnotationView(annotation: annotation, reuseIdentifier: "annotation")
+        let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotation")
         view.canShowCallout = true
-        
+        view.animatesDrop = true
         return view
     }
     

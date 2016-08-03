@@ -72,6 +72,11 @@ class LocationServices: NSObject,CLLocationManagerDelegate {
         
         }
         
+        if(self.userLocation == nil){
+            ///show error alert
+            return
+        }
+        
         LocationWebService.sharedInstance.getQueryResults(query, latitude: Float((self.userLocation?.coordinate.latitude)!), longitude: Float((self.userLocation?.coordinate.longitude)!), radius: 1000, apiKey: Google_API_Key, block: block)
         
         

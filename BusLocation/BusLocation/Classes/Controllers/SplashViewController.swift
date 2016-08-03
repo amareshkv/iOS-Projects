@@ -27,7 +27,7 @@ class SplashViewController: BaseViewController {
     
     func gotoMenuScreen(){
         
-        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("MapViewController")
+        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("MenuViewController")
         self.navigationController?.pushViewController(controller!, animated: true)
     }
 
