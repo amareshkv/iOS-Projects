@@ -12,33 +12,33 @@ import CRToast
 class Utility: NSObject {
     
     
-    class func showCRToastWithMessage(msg : String?, img : UIImage?){
+    class func showCRToastWithMessage(_ msg : String?, img : UIImage?){
         
         let font = UIFont(name: "Avenir-Light", size: 13)
         
-        var options : [NSObject : AnyObject]? = [kCRToastNotificationTypeKey : CRToastType.Custom.rawValue,
-                                           kCRToastNotificationPreferredHeightKey : 60,
+        var options : [AnyHashable: Any]? = [kCRToastNotificationTypeKey : NSNumber(value : CRToastType.custom.rawValue),
+                                           kCRToastNotificationPreferredHeightKey : NSNumber(value: 64),
                                            kCRToastFontKey : (font?.fontForDevice())!,
                                            kCRToastTextKey : msg!,
-                                           kCRToastTextAlignmentKey:NSTextAlignment.Left.rawValue,
-                                           kCRToastNotificationPresentationTypeKey:CRToastPresentationType.Cover.rawValue,
+                                           kCRToastTextAlignmentKey:NSNumber(value : NSTextAlignment.left.rawValue),
+                                           kCRToastNotificationPresentationTypeKey:NSNumber(value : CRToastPresentationType.cover.rawValue),
                                            kCRToastBackgroundColorKey : UIColor(white : 0, alpha : 0.7),
-                                           kCRToastAnimationInTypeKey : CRToastAnimationType.Gravity.rawValue,
-                                           kCRToastAnimationOutTypeKey : CRToastAnimationType.Linear.rawValue,
-                                           kCRToastAnimationInDirectionKey : CRToastAnimationDirection.Top.rawValue,
-                                           kCRToastAnimationOutDirectionKey : CRToastAnimationDirection.Top.rawValue,
-                                           kCRToastTimeIntervalKey : 4]
+                                           kCRToastAnimationInTypeKey : NSNumber(value : CRToastAnimationType.gravity.rawValue),
+                                           kCRToastAnimationOutTypeKey : NSNumber(value : CRToastAnimationType.linear.rawValue),
+                                           kCRToastAnimationInDirectionKey : NSNumber(value : CRToastAnimationDirection.top.rawValue),
+                                           kCRToastAnimationOutDirectionKey : NSNumber(value : CRToastAnimationDirection.top.rawValue),
+                                           kCRToastTimeIntervalKey : NSNumber(value : 4)]
         
     
         
         options![kCRToastImageKey]? = img!
    
     
-        options![kCRToastInteractionRespondersKey] = [CRToastInteractionResponder(interactionType: CRToastInteractionType.Tap, automaticallyDismiss: true, block: { (interactionType) in
+        options![kCRToastInteractionRespondersKey] = [CRToastInteractionResponder(interactionType: CRToastInteractionType.tap, automaticallyDismiss: true, block: { (interactionType) in
             
         })]
     
-        CRToastManager.showNotificationWithOptions(options, apperanceBlock: {
+        CRToastManager.showNotification(options: options, apperanceBlock: {
             
             print("Appeared")
             }) { 

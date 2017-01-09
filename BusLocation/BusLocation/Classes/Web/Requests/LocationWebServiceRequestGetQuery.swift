@@ -12,29 +12,30 @@ import Foundation
 class LocationWebServiceRequestGetQuery : LocationWebServiceRequest{
     
     
-    init(target : Any?, query : String?, latitude : Float, longitude : Float, radius : Float, apiKey : String?, block:webServiceCompletionBlock) {
+    init(target : Any?, query : String?, latitude : Float, longitude : Float, radius : Float, apiKey : String?, block:@escaping webServiceCompletionBlock) {
         
         super.init(block: block)
         
         let urlString : String = "https://maps.googleapis.com/maps/api/place/search/json?location=\(latitude),\(longitude)&radius=\(radius)&types=\(query!)&sensor=true&key=\(apiKey!)"
-        let urlStr : String = urlString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+        //let urlstr : String = urlString.addingPercentEncoding(withAllowedCharacters: CharacterSet.alphanumerics)!
+        let urlStr : String = urlString.addingPercentEscapes(using: String.Encoding.utf8)!
 
         
-        self._url = NSURL(string: urlStr)
+        self._url = URL(string: urlStr)
         print("\(_url)")
         
     }
     
     
-    override func requestComplete(data : NSData?) {
+    override func requestComplete(_ data : Data?) {
         
-        NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+        OperationQueue.main.addOperation { () -> Void in
             
             var array = [QueryObject]()
             
             weak var context = LocationStorage.sharedStorage.moc
             
-            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as? NSDictionary
+            let json = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary
             print("\(json!)")
             let results = json?.arrayForKey("results")
             
@@ -45,16 +46,16 @@ class LocationWebServiceRequestGetQuery : LocationWebServiceRequest{
                 
             }
             
-            self._block!(array,nil)
+            self._block!(array as AnyObject?,nil)
         };
         
         super.requestComplete(data!)
     }
     
     
-    override func requestFailed(error : NSError){
+    override func requestFailed(_ error : Error?){
         
-        NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+        OperationQueue.main.addOperation { () -> Void in
             self._block!(nil,error)
         };
         super.requestFailed(error)

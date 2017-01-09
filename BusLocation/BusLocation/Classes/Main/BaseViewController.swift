@@ -19,6 +19,7 @@ class BaseViewController: UIViewController {
         
         headingLabel?.fontForDevice()
         topBar?.backgroundColor = UIColor.colorForHex("#00B7F7")
+        topBar?.addLowerShadowToViewWithRadius(1, color: UIColor.black)
 
         // Do any additional setup after loading the view.
     }

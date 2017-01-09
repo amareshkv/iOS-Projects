@@ -12,21 +12,21 @@ import CoreLocation
 let Google_API_Key = "AIzaSyAr4KKhGxowRn9aLZm3gZXz1szYF5Rnk5I"
 
 enum GoogleQuery_Type : NSInteger {
-    case ATM
-    case Bus_Station
-    case Pharmacy
-    case Restaurant
-    case Travel_Agency
-    case Cafe
-    case Bank
-    case Bar
-    case Laundry
-    case Bakery
-    case Spa
-    case Police
-    case Doctor
-    case Subway_station
-    case Park
+    case atm
+    case bus_Station
+    case pharmacy
+    case restaurant
+    case travel_Agency
+    case cafe
+    case bank
+    case bar
+    case laundry
+    case bakery
+    case spa
+    case police
+    case doctor
+    case subway_station
+    case park
 }
 
 class LocationServices: NSObject,CLLocationManagerDelegate {
@@ -45,7 +45,7 @@ class LocationServices: NSObject,CLLocationManagerDelegate {
         self.locationManager?.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager?.delegate = self
         
-        if((self.locationManager?.respondsToSelector(#selector(CLLocationManager.requestWhenInUseAuthorization))) != nil){
+        if((self.locationManager?.responds(to: #selector(CLLocationManager.requestWhenInUseAuthorization))) != nil){
             self.locationManager?.requestWhenInUseAuthorization()
         }
         
@@ -54,14 +54,14 @@ class LocationServices: NSObject,CLLocationManagerDelegate {
     }
     
     
-    internal func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
+    internal func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         self.userLocation = locations.first
         
-        NSNotificationCenter.defaultCenter().postNotificationName(kUserLocationNotification, object: self.userLocation)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: kUserLocationNotification), object: self.userLocation)
         
     }
     
-    internal func locationManager(manager: CLLocationManager, didFailWithError error: NSError){
+    internal func locationManager(_ manager: CLLocationManager, didFailWithError error: Error){
         
         
     }
@@ -69,73 +69,71 @@ class LocationServices: NSObject,CLLocationManagerDelegate {
     
     //MARK: Google Querys
     
-    func queryForType(type : GoogleQuery_Type, block : webServiceCompletionBlock){
+    func queryForType(_ type : GoogleQuery_Type, block : @escaping webServiceCompletionBlock){
         
         var query : String?
         
         switch type {
-        case .ATM:
+        case .atm:
             query = "atm|ATM"
             break
             
-        case .Bus_Station:
+        case .bus_Station:
             query = "bus_station"
             break
             
-        case .Pharmacy:
+        case .pharmacy:
             query = "pharmacy"
             break
             
-        case .Restaurant:
+        case .restaurant:
             query = "restaurant"
             break
             
-        case .Travel_Agency:
+        case .travel_Agency:
             query = "travel_agency"
             break
             
-        case .Cafe:
+        case .cafe:
             query = "cafe"
             break
             
-        case .Bank:
+        case .bank:
             query = "bank"
             break
             
-        case .Bar:
+        case .bar:
             query = "bar"
             break
             
-        case .Laundry:
+        case .laundry:
             query = "laundry"
             
-        case .Bakery:
+        case .bakery:
             query = "bakery"
             break
             
-        case .Spa:
+        case .spa:
             query = "spa"
             break
             
-        case .Police:
+        case .police:
             query = "police"
             break
             
-        case .Doctor:
+        case .doctor:
             query = "doctor"
             break
             
-        case .Subway_station:
+        case .subway_station:
             query = "subway_station"
             break
             
-        case .Park:
+        case .park:
             query = "park"
             break
             
-        default:
-            break
-            
+       
         
         }
         

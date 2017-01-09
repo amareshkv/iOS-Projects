@@ -14,22 +14,22 @@ typealias UIAlertCancelAction = (()->Void)
 
 extension UIAlertController{
     
-    class func showAlert(title : String?, message : String?, cancelButtonTitle : String?, onController : UIViewController){
+    class func showAlert(_ title : String?, message : String?, cancelButtonTitle : String?, onController : UIViewController){
         
         self.showAlert(title, message: message, cancelButtonTitle: cancelButtonTitle, okButtonTitle: nil, onController: onController, cancelBlock: nil, okBlock: nil)
         
     }
     
     
-    class func showAlert(title : String?, message : String?, cancelButtonTitle : String?, okButtonTitle : String?, onController : UIViewController, cancelBlock : UIAlertCancelAction?, okBlock : UIAlertOKAction?){
+    class func showAlert(_ title : String?, message : String?, cancelButtonTitle : String?, okButtonTitle : String?, onController : UIViewController, cancelBlock : UIAlertCancelAction?, okBlock : UIAlertOKAction?){
         
-        dispatch_async(dispatch_get_main_queue()) {
+        DispatchQueue.main.async {
             
-            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+            let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
             
             if(cancelButtonTitle != nil){
                 
-                let cancelAction = UIAlertAction(title: cancelButtonTitle, style: UIAlertActionStyle.Default, handler: { (action) in
+                let cancelAction = UIAlertAction(title: cancelButtonTitle, style: UIAlertActionStyle.default, handler: { (action) in
                     cancelBlock!()
                 })
                 alert.addAction(cancelAction)
@@ -39,7 +39,7 @@ extension UIAlertController{
             
             if(okButtonTitle != nil){
                 
-                let okAction = UIAlertAction(title: okButtonTitle, style: UIAlertActionStyle.Default, handler: { (action) in
+                let okAction = UIAlertAction(title: okButtonTitle, style: UIAlertActionStyle.default, handler: { (action) in
                     okBlock!()
                 })
                 alert.addAction(okAction)
@@ -47,7 +47,7 @@ extension UIAlertController{
             }
             
             
-            onController.presentViewController(alert, animated: true, completion: nil)
+            onController.present(alert, animated: true, completion: nil)
             
         }
         

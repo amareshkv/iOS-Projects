@@ -7,19 +7,43 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class LocationWebServiceRequest: NSObject {
     
     var _headers : NSMutableDictionary?
     var _body : NSMutableDictionary?
-    var _url : NSURL?
+    var _url : URL?
     //    weak var _manager : PTWebService?
     var _receivedData : NSMutableData?
-    var _session : NSURLSession?
+    var _session : URLSession?
     var _block : webServiceCompletionBlock?
     
     
-    init(block : webServiceCompletionBlock) {
+    init(block : @escaping webServiceCompletionBlock) {
         
         super.init()
         
@@ -30,7 +54,7 @@ class LocationWebServiceRequest: NSObject {
         //self._url = NSURL(string: "https://api.github.com/users/mralexgray/repos")
         self._receivedData = NSMutableData(capacity: 0)
         
-        self._session = NSURLSession.sharedSession()
+        self._session = URLSession.shared
         
     }
     
@@ -53,20 +77,20 @@ class LocationWebServiceRequest: NSObject {
     
     func setUpRequestAndStart(){
         
-        let request : NSMutableURLRequest? = NSMutableURLRequest(URL: _url!)
+        let request : NSMutableURLRequest? = NSMutableURLRequest(url: _url!)
         
         if _body?.allKeys.count>0{
-            request!.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(_body!, options: .PrettyPrinted)
+            request!.httpBody = try! JSONSerialization.data(withJSONObject: _body!, options: .prettyPrinted)
         }
         for key in (_headers?.allKeys as! [String]?)!{
             
-            request?.addValue(_headers?.valueForKey(key) as! String, forHTTPHeaderField: key)
+            request?.addValue(_headers?.value(forKey: key) as! String, forHTTPHeaderField: key)
         }
-        
-        let sessionTask = self._session?.dataTaskWithRequest(request!, completionHandler: { (data, response, error) -> Void in
+
+        let sessionTask = self._session?.dataTask(with: _url!, completionHandler: { (data, response, error) in
             
             if error != nil{
-                self.requestFailed(error!)
+                self.requestFailed(error)
                 return
             }
             
@@ -79,13 +103,13 @@ class LocationWebServiceRequest: NSObject {
     }
     
     
-    func requestComplete(data : NSData?) {
+    func requestComplete(_ data : Data?) {
         
         
     }
     
     
-    func requestFailed(error : NSError){
+    func requestFailed(_ error : Error?){
         
         
     }

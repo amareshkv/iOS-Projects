@@ -12,7 +12,7 @@ import CoreData
 extension QueryObject{
     
     
-    class func queryObjectWithAttributes(attributes : NSDictionary?, moc : NSManagedObjectContext?) -> QueryObject{
+    class func queryObjectWithAttributes(_ attributes : NSDictionary?, moc : NSManagedObjectContext?) -> QueryObject{
         
         let entity = QueryObject(attributes: attributes, moc: moc)
         return entity
@@ -22,14 +22,14 @@ extension QueryObject{
     
     convenience init(attributes : NSDictionary?, moc : NSManagedObjectContext?){
         
-        self.init(entity: NSEntityDescription.entityForName("QueryObject", inManagedObjectContext: moc!)!, insertIntoManagedObjectContext: moc!)
+        self.init(entity: NSEntityDescription.entity(forEntityName: "QueryObject", in: moc!)!, insertInto: moc!)
         
-        let geometry = attributes?.valueForKey("geometry") as? NSDictionary
+        let geometry = attributes?.value(forKey: "geometry") as? NSDictionary
         
-        let location = geometry?.valueForKey("location") as? NSDictionary
+        let location = geometry?.value(forKey: "location") as? NSDictionary
         
-        self.latitude = NSNumber(float: (location?.valueForKey("lat")?.floatValue)!)
-        self.longitude = NSNumber(float: (location?.valueForKey("lng")?.floatValue)!)
+        self.latitude = NSNumber(value: ((location?.value(forKey: "lat") as AnyObject).floatValue)! as Float)
+        self.longitude = NSNumber(value: ((location?.value(forKey: "lng") as AnyObject).floatValue)! as Float)
         
         self.iconURL = attributes?.stringForKey("icon")
         self.idString = attributes?.stringForKey("id")

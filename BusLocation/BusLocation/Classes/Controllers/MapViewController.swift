@@ -27,7 +27,9 @@ class MapViewController: BaseViewController,MKMapViewDelegate {
 
         showUserLocation()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MapViewController.updateUserLocation(_:)), name: kUserLocationNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(MapViewController.updateUserLocation(_:)), name: NSNotification.Name(rawValue: kUserLocationNotification), object: nil)
+        
+        self.headingLabel?.text = nearByObject?.title
         
         // Do any additional setup after loading the view.
     }
@@ -38,7 +40,7 @@ class MapViewController: BaseViewController,MKMapViewDelegate {
     }
     
     
-    func updateUserLocation(notif : NSNotification){
+    func updateUserLocation(_ notif : Notification){
         
         let location : CLLocation? = notif.object as? CLLocation
         
@@ -68,7 +70,7 @@ class MapViewController: BaseViewController,MKMapViewDelegate {
         
     }
     
-    func plotUserLocation(location : CLLocation?){
+    func plotUserLocation(_ location : CLLocation?){
         
         mapView?.removeAnnotations(mapView!.annotations)
         
@@ -79,30 +81,33 @@ class MapViewController: BaseViewController,MKMapViewDelegate {
     
     func plotOtherLocations(){
         
-        for queryObject in self.objectArray! {
-            let annotation = MKPointAnnotation()
-            annotation.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(queryObject.latitude!), CLLocationDegrees(queryObject.longitude!))
-            annotation.title = queryObject.name
-            mapView?.addAnnotation(annotation)
+        if let objectArray = self.objectArray{
+            for queryObject in objectArray {
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = CLLocationCoordinate2DMake(CLLocationDegrees(queryObject.latitude!), CLLocationDegrees(queryObject.longitude!))
+                annotation.title = queryObject.name
+                mapView?.addAnnotation(annotation)
+            }
         }
+        
         
     }
     
     
-    func CLLocationCoordinateEqual(coordinate1 : CLLocationCoordinate2D, coordinate2 : CLLocationCoordinate2D) -> Bool{
+    func CLLocationCoordinateEqual(_ coordinate1 : CLLocationCoordinate2D, coordinate2 : CLLocationCoordinate2D) -> Bool{
         return (fabs(coordinate1.latitude - coordinate2.latitude) <= DBL_EPSILON && fabs(coordinate1.longitude - coordinate2.longitude) <= DBL_EPSILON)
     }
     
     
     //MARK: Mapview delegates -----
     
-    internal func mapView(mapView: MKMapView, didUpdateUserLocation userLocation: MKUserLocation){
+    internal func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation){
         
         
         
     }
     
-    internal func viewForAnnotation(annotation: MKAnnotation) -> MKAnnotationView?{
+    internal func viewForAnnotation(_ annotation: MKAnnotation) -> MKAnnotationView?{
         
         if (CLLocationCoordinateEqual(annotation.coordinate, coordinate2: (mapView?.userLocation.coordinate)!) == true){
             return nil
@@ -117,16 +122,16 @@ class MapViewController: BaseViewController,MKMapViewDelegate {
     
     //MARK: Button actions -----
     
-    @IBAction func backPressed(sender : UIButton?){
-        
-        self.navigationController?.popViewControllerAnimated(true)
+    @IBAction func backPressed(_ sender : UIButton?){
+        self.objectArray = nil
+        let _ = self.navigationController?.popViewController(animated: true)
     }
 
     
     
     deinit{
         
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 
     /*

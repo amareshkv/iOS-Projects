@@ -13,8 +13,8 @@ import UIKit
 let STANDARD_SCREEN_WIDTH : CGFloat = 320
 let STANDARD_SCREEN_HEIGHT : CGFloat = 568
 
-let UI_SCREEN_WIDTH = UIScreen.mainScreen().bounds.size.width
-let UI_SCREEN_HEIGHT = UIScreen.mainScreen().bounds.size.height
+let UI_SCREEN_WIDTH = UIScreen.main.bounds.size.width
+let UI_SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 
 
 
@@ -103,7 +103,7 @@ extension UIButton{
 
 extension UIView{
     
-    func addRoundedEdgesWithCornerRadius(radius : CGFloat){
+    func addRoundedEdgesWithCornerRadius(_ radius : CGFloat){
         
         let layer = self.layer
         layer.masksToBounds = true
@@ -112,17 +112,17 @@ extension UIView{
     }
     
     
-    func addLowerShadowToViewWithRadius(radius : CGFloat, color : UIColor?){
+    func addLowerShadowToViewWithRadius(_ radius : CGFloat, color : UIColor?){
         
         let layer = self.layer
         layer.masksToBounds = false
-        layer.shadowOffset = CGSizeMake(0, 2)
+        layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowRadius = radius
         layer.shadowOpacity = 0.5
-        layer.shadowColor = color?.CGColor
+        layer.shadowColor = color?.cgColor
         
         layer.shouldRasterize = true
-        layer.rasterizationScale = UIScreen.mainScreen().scale;
+        layer.rasterizationScale = UIScreen.main.scale;
     }
     
     

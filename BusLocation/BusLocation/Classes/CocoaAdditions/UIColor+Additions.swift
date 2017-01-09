@@ -11,48 +11,48 @@ import UIKit
 
 extension UIColor{
     
-    public class func colorForHex(hexColor : NSString) -> UIColor{
+    public class func colorForHex(_ hexColor : NSString) -> UIColor{
         
         return UIColor.colorForHexWithOpacity(hexColor, opacity: 1)
         
     }
     
     
-    public class func colorForHexWithOpacity(hex : NSString, opacity: Float) -> UIColor{
+    public class func colorForHexWithOpacity(_ hex : NSString, opacity: Float) -> UIColor{
         
         var hexColor = hex
-        hexColor = hexColor.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString
+        hexColor = hexColor.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines).uppercased() as NSString
         
         // String should be 6 or 7 characters if it includes '#'
         if hexColor.length<6{
-            return UIColor.blackColor()
+            return UIColor.black
         }
         
         // strip # if it appears
         if hexColor.hasPrefix("#"){
-            hexColor = hexColor.substringFromIndex(1)
+            hexColor = hexColor.substring(from: 1) as NSString
         }
         
         // if the value isn't 6 characters at this point return
         // the color black
         
         if (hexColor.length != 6){
-            return UIColor.blackColor()
+            return UIColor.black
         }
         
         // Separate into r, g, b substrings
         
         var range : NSRange = NSRange(location: 0, length: 2)
         
-        let rString = hexColor.substringWithRange(range)
+        let rString = hexColor.substring(with: range)
         
         range.location = 2;
         
-        let gString = hexColor.substringWithRange(range)
+        let gString = hexColor.substring(with: range)
         
         range.location = 4;
         
-        let bString = hexColor.substringWithRange(range)
+        let bString = hexColor.substring(with: range)
         
         // Scan values
         
@@ -61,9 +61,9 @@ extension UIColor{
         var b : CUnsignedInt = 0
         
         
-        NSScanner(string: rString).scanHexInt(&r)
-        NSScanner(string: gString).scanHexInt(&g)
-        NSScanner(string: bString).scanHexInt(&b)
+        Scanner(string: rString).scanHexInt32(&r)
+        Scanner(string: gString).scanHexInt32(&g)
+        Scanner(string: bString).scanHexInt32(&b)
         
         return UIColor(red: CGFloat(Float(r) / Float(255.0)), green: CGFloat(Float(g) / Float(255.0)), blue: CGFloat(Float(b) / Float(255.0)), alpha: CGFloat(opacity))
         

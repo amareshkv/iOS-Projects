@@ -16,34 +16,26 @@ class LocationStorage: NSObject {
     var managedObjectModel : NSManagedObjectModel?
     
     
-    class var sharedStorage: LocationStorage {
-        struct Static {
-            static var onceToken: dispatch_once_t = 0
-            static var instance: LocationStorage? = nil
-        }
-        dispatch_once(&Static.onceToken) {
-            Static.instance = LocationStorage()
-        }
-        return Static.instance!
-    }
+    static let sharedStorage = LocationStorage()
+
     
     
     
-    func applicationDocumentsDirectory() -> NSURL?{
+    func applicationDocumentsDirectory() -> URL?{
         
-        return NSFileManager.defaultManager().URLsForDirectory(NSSearchPathDirectory.DocumentDirectory, inDomains: NSSearchPathDomainMask.UserDomainMask).last
+        return FileManager.default.urls(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).last
     }
     
     func startCoreData(){
         
-        let path = NSBundle.mainBundle().pathForResource("DataModel", ofType: "momd");
-        let momURL = NSURL.fileURLWithPath(path!);
+        let path = Bundle.main.path(forResource: "DataModel", ofType: "momd");
+        let momURL = URL(fileURLWithPath: path!);
         
-        self.managedObjectModel = NSManagedObjectModel(contentsOfURL: momURL);
+        self.managedObjectModel = NSManagedObjectModel(contentsOf: momURL);
         
         self.persistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel!);
         
-        let storeURL = self.applicationDocumentsDirectory()?.URLByAppendingPathComponent("database.sqlite");
+        let storeURL = self.applicationDocumentsDirectory()?.appendingPathComponent("database.sqlite");
         
         // handle db upgrade
         
@@ -51,12 +43,12 @@ class LocationStorage: NSObject {
                         NSInferMappingModelAutomaticallyOption : true]
         
         
-        let persistentStore = try? (self.persistentStoreCoordinator?.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: storeURL, options: options))!
+        let persistentStore = try? (self.persistentStoreCoordinator?.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeURL, options: options))!
         
         
         if(persistentStore != nil){
             
-            self.moc = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.PrivateQueueConcurrencyType)
+            self.moc = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.privateQueueConcurrencyType)
             self.moc?.persistentStoreCoordinator = self.persistentStoreCoordinator;
             
         }
@@ -67,16 +59,16 @@ class LocationStorage: NSObject {
         
     }
     
-    func deleteEntityFromDBEntityName(entityName : String){
+    func deleteEntityFromDBEntityName(_ entityName : String){
         
-        let request = NSFetchRequest(entityName: entityName)
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
         
-        self.moc?.performBlockAndWait({
+        self.moc?.performAndWait({
             
-            let objects = try? (self.moc?.executeFetchRequest(request))! as! [NSManagedObject]
+            let objects = try? (self.moc?.fetch(request))! as! [NSManagedObject]
             
             for obj in objects!{
-                self.moc?.deleteObject(obj)
+                self.moc?.delete(obj)
             }
             
             
@@ -93,12 +85,12 @@ class LocationStorage: NSObject {
         var context = moc;
         
         while(context != nil && success == false){
-            context?.performBlockAndWait({
+            context?.performAndWait({
                 
                 try! context?.save()
                 
             });
-            context = context?.parentContext
+            context = context?.parent
             
         }
         

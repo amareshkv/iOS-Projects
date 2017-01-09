@@ -8,30 +8,21 @@
 
 import UIKit
 
-typealias webServiceCompletionBlock = ((AnyObject?,NSError?)->Void)
+typealias webServiceCompletionBlock = ((AnyObject?,Error?)->Void)
 
 
-class LocationWebService: NSObject,NSURLSessionDelegate {
+class LocationWebService: NSObject,URLSessionDelegate {
     
     
-    class var sharedInstance: LocationWebService {
-        struct Static {
-            static var onceToken: dispatch_once_t = 0
-            static var instance: LocationWebService? = nil
-        }
-        dispatch_once(&Static.onceToken) {
-            Static.instance = LocationWebService()
-        }
-        return Static.instance!
-    }
+    static let sharedInstance: LocationWebService = LocationWebService()
     
-    func startRequest(request : LocationWebServiceRequest){
+    func startRequest(_ request : LocationWebServiceRequest){
         
         request.setUpRequestAndStart()
         
     }
     
-    func endRequest(request : LocationWebServiceRequest){
+    func endRequest(_ request : LocationWebServiceRequest){
         
         //request
     }
@@ -47,10 +38,10 @@ class LocationWebService: NSObject,NSURLSessionDelegate {
 
 extension LocationWebService{
     
-    func getQueryResults(query : String?, latitude : Float, longitude : Float, radius : Float, apiKey : String?, block : webServiceCompletionBlock){
+    func getQueryResults(_ query : String?, latitude : Float, longitude : Float, radius : Float, apiKey : String?, block : @escaping webServiceCompletionBlock){
         
         let service  = LocationWebServiceRequestGetQuery(target: self, query: query, latitude: latitude, longitude: longitude, radius: radius, apiKey: apiKey, block: block)
-        self.performSelector(#selector(LocationWebService.startRequest(_:)), withObject: service)
+        self.perform(#selector(LocationWebService.startRequest(_:)), with: service)
         
     }
     

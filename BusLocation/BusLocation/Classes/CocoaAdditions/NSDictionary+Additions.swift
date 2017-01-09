@@ -10,9 +10,9 @@ import Foundation
 
 extension NSDictionary {
     
-    func arrayForKey(key : String) -> NSArray?{
+    func arrayForKey(_ key : String) -> NSArray?{
         
-        let obj = self.valueForKey(key)
+        let obj = self.value(forKey: key)
         
         let string = obj as? NSArray
         
@@ -20,9 +20,9 @@ extension NSDictionary {
         
     }
     
-    func dictionaryForKey(key : String) -> NSDictionary?{
+    func dictionaryForKey(_ key : String) -> NSDictionary?{
         
-        let obj = self.valueForKey(key)
+        let obj = self.value(forKey: key)
         
         let string = obj as? NSDictionary
         
@@ -30,18 +30,18 @@ extension NSDictionary {
         
     }
     
-    func stringForKey(key : String) -> String?{
+    func stringForKey(_ key : String) -> String?{
         
-        let obj = self.valueForKey(key)
+        let obj = self.value(forKey: key)
         
         let string = obj as? String
         
         return string
     }
     
-    func numberForKey(key : String) -> NSNumber?{
+    func numberForKey(_ key : String) -> NSNumber?{
         
-        let obj = self.valueForKey(key)
+        let obj = self.value(forKey: key)
         
         let string = obj as? NSNumber
         

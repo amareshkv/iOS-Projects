@@ -13,9 +13,9 @@ class SplashViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        LocationServices.sharedServices
+        let _ = LocationServices.sharedServices
 
-        self.performSelector(#selector(SplashViewController.gotoMenuScreen), withObject: nil, afterDelay: 2)
+        self.perform(#selector(SplashViewController.gotoMenuScreen), with: nil, afterDelay: 2)
         // Do any additional setup after loading the view.
     }
 
@@ -27,7 +27,7 @@ class SplashViewController: BaseViewController {
     
     func gotoMenuScreen(){
         
-        let controller = self.storyboard?.instantiateViewControllerWithIdentifier("MenuViewController")
+        let controller = self.storyboard?.instantiateViewController(withIdentifier: "MenuViewController")
         self.navigationController?.pushViewController(controller!, animated: true)
     }
 
