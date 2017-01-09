@@ -8,7 +8,8 @@
 
 import UIKit
 
-let startAppID = "203525628"
+let startAppID = "200633817"
+let startAccountID = "103404835"
 
 class AdServices: NSObject,STADelegateProtocol {
     
@@ -27,7 +28,7 @@ class AdServices: NSObject,STADelegateProtocol {
         
         let sdk = STAStartAppSDK.sharedInstance()
         sdk?.appID = startAppID
-        
+        sdk?.devID = startAccountID
     }
     
     //MARK StartApp ads
