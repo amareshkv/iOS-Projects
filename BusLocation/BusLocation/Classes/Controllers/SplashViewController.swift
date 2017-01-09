@@ -14,6 +14,7 @@ class SplashViewController: BaseViewController {
         super.viewDidLoad()
         
         let _ = LocationServices.sharedServices
+        AdServices.sharedServices.showSplashAd()
 
         self.perform(#selector(SplashViewController.gotoMenuScreen), with: nil, afterDelay: 2)
         // Do any additional setup after loading the view.

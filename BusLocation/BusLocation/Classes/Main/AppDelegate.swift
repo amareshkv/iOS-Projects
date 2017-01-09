@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         LocationStorage.sharedStorage.startCoreData()
+        AdServices.sharedServices.preLoadAds()
         
         return true
     }

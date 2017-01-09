@@ -13,6 +13,16 @@
 		AC26E85E1D51D12900989996 /* UIColor+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC26E85B1D51D12900989996 /* UIColor+Additions.swift */; };
 		AC26E85F1D51D12900989996 /* UIKit+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC26E85C1D51D12900989996 /* UIKit+Additions.swift */; };
 		AC26E8611D51D32E00989996 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC26E8601D51D32E00989996 /* Utility.swift */; };
+		ACA1E1A21E23ADD700AD6C71 /* StartApp.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ACA1E1A01E23ADD700AD6C71 /* StartApp.bundle */; };
+		ACA1E1A31E23ADD700AD6C71 /* StartApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA1E1A11E23ADD700AD6C71 /* StartApp.framework */; };
+		ACA1E1A51E23AE7900AD6C71 /* AdServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA1E1A41E23AE7900AD6C71 /* AdServices.swift */; };
+		ACA1E1A81E23B0F400AD6C71 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA1E1A71E23B0F400AD6C71 /* AVFoundation.framework */; };
+		ACA1E1AA1E23B10000AD6C71 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA1E1A91E23B10000AD6C71 /* SystemConfiguration.framework */; };
+		ACA1E1AC1E23B10B00AD6C71 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA1E1AB1E23B10B00AD6C71 /* CoreMedia.framework */; };
+		ACA1E1AE1E23B11300AD6C71 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA1E1AD1E23B11300AD6C71 /* StoreKit.framework */; };
+		ACA1E1B01E23B11800AD6C71 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA1E1AF1E23B11800AD6C71 /* CoreTelephony.framework */; };
+		ACA1E1B21E23B12600AD6C71 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA1E1B11E23B12600AD6C71 /* AdSupport.framework */; };
+		ACA1E1B41E23B13600AD6C71 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACA1E1B31E23B13600AD6C71 /* libz.tbd */; };
 		ACB267A01D4F200D00DC4B6F /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ACB2679E1D4F200D00DC4B6F /* DataModel.xcdatamodeld */; };
 		ACB267A51D4F216E00DC4B6F /* QueryObject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB267A31D4F216E00DC4B6F /* QueryObject+CoreDataProperties.swift */; };
 		ACB267A61D4F216E00DC4B6F /* QueryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB267A41D4F216E00DC4B6F /* QueryObject.swift */; };
@@ -41,6 +51,17 @@
 		AC26E85B1D51D12900989996 /* UIColor+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Additions.swift"; sourceTree = "<group>"; };
 		AC26E85C1D51D12900989996 /* UIKit+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit+Additions.swift"; sourceTree = "<group>"; };
 		AC26E8601D51D32E00989996 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		ACA1E1A01E23ADD700AD6C71 /* StartApp.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = StartApp.bundle; sourceTree = "<group>"; };
+		ACA1E1A11E23ADD700AD6C71 /* StartApp.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = StartApp.framework; sourceTree = "<group>"; };
+		ACA1E1A41E23AE7900AD6C71 /* AdServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdServices.swift; sourceTree = "<group>"; };
+		ACA1E1A61E23AEC300AD6C71 /* NearBy-BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NearBy-BridgingHeader.h"; sourceTree = "<group>"; };
+		ACA1E1A71E23B0F400AD6C71 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		ACA1E1A91E23B10000AD6C71 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		ACA1E1AB1E23B10B00AD6C71 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		ACA1E1AD1E23B11300AD6C71 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		ACA1E1AF1E23B11800AD6C71 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		ACA1E1B11E23B12600AD6C71 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		ACA1E1B31E23B13600AD6C71 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		ACB2679F1D4F200D00DC4B6F /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		ACB267A31D4F216E00DC4B6F /* QueryObject+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "QueryObject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		ACB267A41D4F216E00DC4B6F /* QueryObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryObject.swift; sourceTree = "<group>"; };
@@ -71,7 +92,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACA1E1B41E23B13600AD6C71 /* libz.tbd in Frameworks */,
+				ACA1E1B21E23B12600AD6C71 /* AdSupport.framework in Frameworks */,
+				ACA1E1B01E23B11800AD6C71 /* CoreTelephony.framework in Frameworks */,
+				ACA1E1AE1E23B11300AD6C71 /* StoreKit.framework in Frameworks */,
+				ACA1E1AC1E23B10B00AD6C71 /* CoreMedia.framework in Frameworks */,
+				ACA1E1AA1E23B10000AD6C71 /* SystemConfiguration.framework in Frameworks */,
+				ACA1E1A81E23B0F400AD6C71 /* AVFoundation.framework in Frameworks */,
 				60CE7C0F2381055C1F45AA46 /* Pods_BusLocation.framework in Frameworks */,
+				ACA1E1A31E23ADD700AD6C71 /* StartApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,9 +110,25 @@
 		204360B941162CD6304ADED7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ACA1E1B31E23B13600AD6C71 /* libz.tbd */,
+				ACA1E1B11E23B12600AD6C71 /* AdSupport.framework */,
+				ACA1E1AF1E23B11800AD6C71 /* CoreTelephony.framework */,
+				ACA1E1AD1E23B11300AD6C71 /* StoreKit.framework */,
+				ACA1E1AB1E23B10B00AD6C71 /* CoreMedia.framework */,
+				ACA1E1A91E23B10000AD6C71 /* SystemConfiguration.framework */,
+				ACA1E1A71E23B0F400AD6C71 /* AVFoundation.framework */,
 				8A8752538CB1FBA28BA2A3B3 /* Pods_BusLocation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ACA1E19F1E23ADD700AD6C71 /* StartApp */ = {
+			isa = PBXGroup;
+			children = (
+				ACA1E1A01E23ADD700AD6C71 /* StartApp.bundle */,
+				ACA1E1A11E23ADD700AD6C71 /* StartApp.framework */,
+			);
+			path = StartApp;
 			sourceTree = "<group>";
 		};
 		ACB267A11D4F216100DC4B6F /* ModelAdditions */ = {
@@ -188,7 +233,10 @@
 			isa = PBXGroup;
 			children = (
 				E998C59A1D4DFCE0001F5C16 /* LocationServices.swift */,
+				ACA1E1A41E23AE7900AD6C71 /* AdServices.swift */,
 				AC26E8601D51D32E00989996 /* Utility.swift */,
+				ACA1E1A61E23AEC300AD6C71 /* NearBy-BridgingHeader.h */,
+				ACA1E19F1E23ADD700AD6C71 /* StartApp */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -298,6 +346,7 @@
 			files = (
 				E998C57E1D4DD7A6001F5C16 /* LaunchScreen.storyboard in Resources */,
 				E998C58F1D4DD7E2001F5C16 /* Assets.xcassets in Resources */,
+				ACA1E1A21E23ADD700AD6C71 /* StartApp.bundle in Resources */,
 				E998C5791D4DD7A6001F5C16 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,6 +410,7 @@
 				ACB267A81D4F21D000DC4B6F /* QueryObject+Additions.swift in Sources */,
 				E998C5911D4DD7F6001F5C16 /* RootViewController.swift in Sources */,
 				E998C5991D4DE2FD001F5C16 /* MapViewController.swift in Sources */,
+				ACA1E1A51E23AE7900AD6C71 /* AdServices.swift in Sources */,
 				ACB267A51D4F216E00DC4B6F /* QueryObject+CoreDataProperties.swift in Sources */,
 				AC26E85E1D51D12900989996 /* UIColor+Additions.swift in Sources */,
 				ACB267AB1D4F23E100DC4B6F /* NSDictionary+Additions.swift in Sources */,
@@ -500,12 +550,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BusLocation/Classes/Utilities/StartApp",
+				);
 				INFOPLIST_FILE = BusLocation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sri.BusLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/BusLocation/Classes/Utilities/NearBy-BridgingHeader.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -517,12 +572,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BusLocation/Classes/Utilities/StartApp",
+				);
 				INFOPLIST_FILE = BusLocation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sri.BusLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/BusLocation/Classes/Utilities/NearBy-BridgingHeader.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
