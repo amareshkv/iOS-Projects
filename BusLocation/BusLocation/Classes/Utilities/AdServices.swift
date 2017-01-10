@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 let startAppID = "200633817"
 let startAccountID = "103404835"
@@ -55,6 +56,11 @@ class AdServices: NSObject,AdServicesProtocol {
         }
     }
     
+    public func showAdmobBanner(){
+        
+        let bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+
+    }
     
 }
 
@@ -97,4 +103,6 @@ extension AdServices : STADelegateProtocol{
         print("show error = \(error)")
     }
 }
+
+extension AdServicesProtocol : GADB
 

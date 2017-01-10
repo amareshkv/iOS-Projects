@@ -8,7 +8,8 @@ target 'BusLocation' do
   # Pods for BusLocation
 
 pod 'CRToast'
-pod 'Firebase/Admob'
-pod ‘Firebase/Crash’
+pod 'Firebase/Core'
+pod 'Firebase/AdMob'
+pod 'Firebase/Crash'
 
 end

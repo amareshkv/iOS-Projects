@@ -1,6 +1,0 @@
-framework module Pods_BusLocation {
-  umbrella header "Pods-BusLocation-umbrella.h"
-
-  export *
-  module * { export * }
-}
