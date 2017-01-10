@@ -11,16 +11,25 @@ import UIKit
 let startAppID = "200633817"
 let startAccountID = "103404835"
 
-class AdServices: NSObject,STADelegateProtocol {
+protocol AdServicesProtocol {
     
+    var startAppBanner: STABannerView? {get set}
+    var isBannerAdLoaded : Bool? {get set}
+}
+
+class AdServices: NSObject,AdServicesProtocol {
+   
+    internal var isBannerAdLoaded: Bool?
+
+    internal var startAppBanner: STABannerView?
+
     static let sharedServices : AdServices = {
         
         let instance = AdServices()
         return instance
     }()
     
-    override init() {
-        super.init()
+    required override init() {
         
     }
     
@@ -38,6 +47,40 @@ class AdServices: NSObject,STADelegateProtocol {
         sdk?.showSplashAd(withDelegate: self)
     }
     
+    public func showBannerAds(view : UIView){
+        
+        if (startAppBanner == nil) {
+            startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Bottom, with: view, withDelegate: self);
+            view.addSubview(startAppBanner!)
+        }
+    }
+    
+    
+}
+
+
+extension AdServices : STABannerDelegateProtocol{
+    
+    func didDisplayBannerAd(_ banner: STABannerView!) {
+        print("display banner success")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNotification_didDisplayBannerAd), object: nil)
+        self.isBannerAdLoaded = true
+    }
+    
+    func failedLoadBannerAd(_ banner: STABannerView!, withError error: Error!) {
+        print("display banner error")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNotification_didFailedToDisplayBannerAd), object: nil)
+        self.isBannerAdLoaded = false
+    }
+    
+    func didClickBannerAd(_ banner: STABannerView!) {
+        print("click banner success")
+    }
+    
+}
+
+extension AdServices : STADelegateProtocol{
+    
     func didLoad(_ ad: STAAbstractAd!) {
         print("load success")
     }
@@ -53,6 +96,5 @@ class AdServices: NSObject,STADelegateProtocol {
     func failedShow(_ ad: STAAbstractAd!, withError error: Error!) {
         print("show error = \(error)")
     }
-    
-
 }
+
