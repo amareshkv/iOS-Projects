@@ -10,6 +10,5 @@ target 'BusLocation' do
 pod 'CRToast'
 pod 'Firebase/Core'
 pod 'Firebase/AdMob'
-pod 'Firebase/Crash'
 
 end

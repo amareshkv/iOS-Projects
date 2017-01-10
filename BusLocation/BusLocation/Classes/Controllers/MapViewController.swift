@@ -113,9 +113,11 @@ class MapViewController: BaseViewController,MKMapViewDelegate {
             return nil
         }
         
-        let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotation")
+        //let view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "annotation")
+        let view = MKAnnotationView(annotation: annotation, reuseIdentifier: "annotation")
+        view.image = UIImage(named: "locationicon")
         view.canShowCallout = true
-        view.animatesDrop = true
+        //view.animatesDrop = true
         return view
     }
     

@@ -84,7 +84,7 @@ extension BaseViewController : AdServicesProtocol{
         
         NotificationCenter.default.addObserver(self, selector: #selector(BaseViewController.didFailedToLoadBannerAd(notification:)), name: NSNotification.Name(rawValue: kNotification_didFailedToDisplayBannerAd), object: nil)
         
-        if let banneradloaded = isBannerAdLoaded{
+        if let banneradloaded = AdServices.sharedServices.isBannerAdLoaded{
             if banneradloaded == true{
                 didDisplayBannerAd(notification: nil)
             }
@@ -111,13 +111,13 @@ extension BaseViewController : AdServicesProtocol{
     
     override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation)  {
         // notify StartApp auto Banner orientation change
-        startAppBanner!.didRotate(from: fromInterfaceOrientation)
+        AdServices.sharedServices.startAppBanner!.didRotate(from: fromInterfaceOrientation)
         super.didRotate(from: fromInterfaceOrientation)
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         // notify StartApp auto Banner orientation change
-        startAppBanner!.viewWillTransition(to: size, with: coordinator)
+        AdServices.sharedServices.startAppBanner!.viewWillTransition(to: size, with: coordinator)
         
         super.viewWillTransition(to: size, with: coordinator)
     }

@@ -316,8 +316,9 @@
 				TargetAttributes = {
 					E998C56F1D4DD7A6001F5C16 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = Y9RB9MMGD4;
+						DevelopmentTeam = 29U6U97JZP;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -548,8 +549,10 @@
 			baseConfigurationReference = BC20C0FA7265D989AD5C663E /* Pods-BusLocation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 29U6U97JZP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BusLocation/Classes/Utilities/StartApp",
@@ -557,9 +560,10 @@
 				INFOPLIST_FILE = BusLocation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sri.BusLocation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amaresh.nearby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b547f712-58d5-4be3-9b93-74bb922eea5a";
+				PROVISIONING_PROFILE_SPECIFIER = "Amaresh Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/BusLocation/Classes/Utilities/NearBy-BridgingHeader.h";
 				SWIFT_VERSION = 3.0;
 			};
@@ -570,8 +574,10 @@
 			baseConfigurationReference = FCFA60DADEAF21E02DBABCA0 /* Pods-BusLocation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 29U6U97JZP;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BusLocation/Classes/Utilities/StartApp",
@@ -579,9 +585,10 @@
 				INFOPLIST_FILE = BusLocation/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sri.BusLocation;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amaresh.nearby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "b547f712-58d5-4be3-9b93-74bb922eea5a";
+				PROVISIONING_PROFILE_SPECIFIER = "Amaresh Development";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/BusLocation/Classes/Utilities/NearBy-BridgingHeader.h";
 				SWIFT_VERSION = 3.0;
 			};

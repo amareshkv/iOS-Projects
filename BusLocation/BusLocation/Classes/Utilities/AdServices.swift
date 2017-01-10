@@ -61,10 +61,11 @@ class AdServices: NSObject,AdServicesProtocol {
         
         GADMobileAds.configure(withApplicationID: admobAppID)
         
-        self.bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        self.bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait, origin: CGPoint(x: 0, y: UIScreen.main.bounds.size.height - 50))
         bannerView?.delegate = self
-        
+        bannerView?.adUnitID = admobAppID
         bannerView?.rootViewController = controller
+        controller.view.addSubview(bannerView!)
         //showAdmobBanner()
         
     }
@@ -137,8 +138,11 @@ extension AdServices : GADBannerViewDelegate{
     
     func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
         print("display admob banner error")
-        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNotification_didFailedToDisplayBannerAd), object: nil)
-        //self.isBannerAdLoaded = false
+        if error.code != 0{
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNotification_didFailedToDisplayBannerAd), object: nil)
+            self.isBannerAdLoaded = false
+        }
+        //
     }
 
     

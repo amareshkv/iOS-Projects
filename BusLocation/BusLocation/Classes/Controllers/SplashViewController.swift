@@ -10,8 +10,32 @@ import UIKit
 
 class SplashViewController: BaseViewController {
 
+    @IBOutlet weak var bgImageView : UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var image = "LaunchImage-700@2x.png"
+        let screenheight = UIScreen.main.bounds.size.height
+        switch screenheight {
+        case 736:
+            image = "LaunchImage-800-Portrait-736h@3x.png"
+            break
+            
+        case 667:
+            image = "LaunchImage-800-667h@2x.png"
+            break
+            
+        case 568:
+            image = "LaunchImage-700-568h@2x.png"
+            break
+            
+        default:
+            image = "LaunchImage-700@2x.png"
+        }
+        
+        bgImageView.image = UIImage(named: image)
         
         let _ = LocationServices.sharedServices
         AdServices.sharedServices.showSplashAd()

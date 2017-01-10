@@ -42,7 +42,7 @@ class MenuViewController: BaseViewController,UITableViewDelegate,UITableViewData
         
         nearByPlaces()
         
-        Utility.showCRToastWithMessage("Success", img: nil)
+        //Utility.showCRToastWithMessage("Success", img: nil)
         
         // Do any additional setup after loading the view.
     }
