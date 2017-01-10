@@ -13,7 +13,7 @@ class RootViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        AdServices.sharedServices.showBannerAds(view: self.view)
+        AdServices.sharedServices.showBannerAds(controller: self)
         // Do any additional setup after loading the view.
     }
 

@@ -92,6 +92,9 @@ extension BaseViewController : AdServicesProtocol{
                 didFailedToLoadBannerAd(notification: nil)
             }
         }
+        else{
+            didFailedToLoadBannerAd(notification: nil)
+        }
         
     }
     

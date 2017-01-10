@@ -12,6 +12,8 @@ import GoogleMobileAds
 let startAppID = "200633817"
 let startAccountID = "103404835"
 
+let admobAppID = "ca-app-pub-5021783510483777/7364339046"
+
 protocol AdServicesProtocol {
     
     var startAppBanner: STABannerView? {get set}
@@ -23,6 +25,8 @@ class AdServices: NSObject,AdServicesProtocol {
     internal var isBannerAdLoaded: Bool?
 
     internal var startAppBanner: STABannerView?
+    
+    var bannerView: GADBannerView?
 
     static let sharedServices : AdServices = {
         
@@ -48,18 +52,32 @@ class AdServices: NSObject,AdServicesProtocol {
         sdk?.showSplashAd(withDelegate: self)
     }
     
-    public func showBannerAds(view : UIView){
-        
+    public func showBannerAds(controller : UIViewController){
+
         if (startAppBanner == nil) {
-            startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Bottom, with: view, withDelegate: self);
-            view.addSubview(startAppBanner!)
+            startAppBanner = STABannerView(size: STA_AutoAdSize, autoOrigin: STAAdOrigin_Bottom, with: controller.view, withDelegate: self);
+            controller.view.addSubview(startAppBanner!)
         }
+        
+        GADMobileAds.configure(withApplicationID: admobAppID)
+        
+        self.bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        bannerView?.delegate = self
+        
+        bannerView?.rootViewController = controller
+        //showAdmobBanner()
+        
     }
     
     public func showAdmobBanner(){
+        let request = GADRequest()
+        request.testDevices = [kGADSimulatorID]
+        bannerView?.load(request)
+    }
+    
+    public func hideAdmobBanner(){
         
-        let bannerView = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-
+        bannerView?.load(nil)
     }
     
 }
@@ -69,6 +87,9 @@ extension AdServices : STABannerDelegateProtocol{
     
     func didDisplayBannerAd(_ banner: STABannerView!) {
         print("display banner success")
+        
+        hideAdmobBanner()
+        
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNotification_didDisplayBannerAd), object: nil)
         self.isBannerAdLoaded = true
     }
@@ -77,6 +98,8 @@ extension AdServices : STABannerDelegateProtocol{
         print("display banner error")
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNotification_didFailedToDisplayBannerAd), object: nil)
         self.isBannerAdLoaded = false
+        
+        showAdmobBanner()
     }
     
     func didClickBannerAd(_ banner: STABannerView!) {
@@ -104,5 +127,20 @@ extension AdServices : STADelegateProtocol{
     }
 }
 
-extension AdServicesProtocol : GADB
+extension AdServices : GADBannerViewDelegate{
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        print("display admob banner success")
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNotification_didDisplayBannerAd), object: nil)
+        self.isBannerAdLoaded = true
+    }
+    
+    func adView(_ bannerView: GADBannerView, didFailToReceiveAdWithError error: GADRequestError) {
+        print("display admob banner error")
+        //NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNotification_didFailedToDisplayBannerAd), object: nil)
+        //self.isBannerAdLoaded = false
+    }
+
+    
+}
 
