@@ -13,7 +13,7 @@ class RootViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //AdServices.sharedServices.showBannerAds(controller: self)
+        AdServices.sharedServices.showBannerAds(controller: self)
         // Do any additional setup after loading the view.
     }
 
@@ -21,11 +21,6 @@ class RootViewController: UINavigationController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    //MARK: Start APP ads
-    
-    
 
     /*
     // MARK: - Navigation

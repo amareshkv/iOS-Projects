@@ -22,7 +22,7 @@ class LocationWebServiceRequestGetQuery : LocationWebServiceRequest{
 
         
         self._url = URL(string: urlStr)
-        print("\(_url)")
+        //print("\(_url)")
         
     }
     
@@ -36,7 +36,7 @@ class LocationWebServiceRequestGetQuery : LocationWebServiceRequest{
             weak var context = LocationStorage.sharedStorage.moc
             
             let json = try! JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as? NSDictionary
-            print("\(json!)")
+            print("json result success")
             let results = json?.arrayForKey("results")
             
             for attributes in results!{
