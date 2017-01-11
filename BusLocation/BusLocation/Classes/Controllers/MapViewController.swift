@@ -24,6 +24,7 @@ class MapViewController: BaseViewController,MKMapViewDelegate {
         super.viewDidLoad()
         
         mapView?.showsUserLocation = true
+        mapView?.delegate = self
 
         showUserLocation()
         
@@ -42,11 +43,18 @@ class MapViewController: BaseViewController,MKMapViewDelegate {
     
     func updateUserLocation(_ notif : Notification){
         
+        if (mapView?.annotations.count)!>1{
+            return
+        }
+        
         let location : CLLocation? = notif.object as? CLLocation
         
         plotUserLocation(location)
         
         self.plotOtherLocations()
+        
+        
+
     }
     
     func showUserLocation(){
@@ -90,7 +98,7 @@ class MapViewController: BaseViewController,MKMapViewDelegate {
             }
         }
         
-        
+        mapView?.showAnnotations((mapView?.annotations)!, animated: true)
     }
     
     
@@ -107,9 +115,10 @@ class MapViewController: BaseViewController,MKMapViewDelegate {
         
     }
     
-    internal func viewForAnnotation(_ annotation: MKAnnotation) -> MKAnnotationView?{
+    internal func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?{
+
         
-        if (CLLocationCoordinateEqual(annotation.coordinate, coordinate2: (mapView?.userLocation.coordinate)!) == true){
+        if (CLLocationCoordinateEqual(annotation.coordinate, coordinate2: (mapView.userLocation.coordinate)) == true){
             return nil
         }
         
